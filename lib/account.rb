@@ -1,6 +1,7 @@
 # Account logs individual transactions
 
 require_relative './transaction'
+require_relative './statement'
 
 class Account
 

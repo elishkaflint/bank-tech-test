@@ -1,15 +1,15 @@
-require 'summary'
+require 'Statement'
 
-describe Summary do
+describe Statement do
 
-  let(:subject) { Summary.new(transactions) }
+  let(:subject) { Statement.new(transactions) }
   let(:transactions) { [transaction1, transaction2] }
-  let(:transaction1) { double(:transaction1, debit: 0, credit: 10, date: "13/08/2018", current_balance: 10) }
-  let(:transaction2) { double(:transaction2, debit: 5, credit: 0, date: "14/08/2018", current_balance: 5) }
+  let(:transaction1) { double(:transaction1, debit: "0.00", credit: "10.00", date: "13/08/2018", current_balance: "10.00") }
+  let(:transaction2) { double(:transaction2, debit: "5.00", credit: "0.00", date: "14/08/2018", current_balance: "5.00") }
 
   describe '#print' do
     it 'prints an array in the required format' do
-      msg = "date || credit || debit || balance\n14/08/2018 || || 5.00 || 5.00\n13/08/2018 || 10.00 || || 10.00"
+      msg = "date || credit || debit || balance\n14/08/2018 || 0.00 || 5.00 || 5.00\n13/08/2018 || 10.00 || 0.00 || 10.00\n"
       expect(subject.print).to eq msg
     end
   end
