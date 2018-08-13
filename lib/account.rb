@@ -1,4 +1,5 @@
 # Account logs individual transactions
+
 require 'transaction'
 
 class Account
