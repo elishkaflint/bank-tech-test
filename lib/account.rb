@@ -8,9 +8,10 @@ class Account
   attr_reader :transactions, :balance
   DEFAULT_BALANCE = 0
 
-  def initialize
+  def initialize(statement = Statement.new)
     @transactions = []
     @balance = DEFAULT_BALANCE
+    @statement = statement
   end
 
   def deposit(amount, transaction = Transaction)
@@ -25,6 +26,10 @@ class Account
     # reducing number of args does not make tests fail
     debit = transaction.new(amount, 0, @balance)
     store(debit)
+  end
+
+  def summary
+    puts @statement.print(@transactions)
   end
 
   private

@@ -5,7 +5,7 @@ describe Account do
   let(:subject) { Account.new(statement) }
   let(:transaction_class) { double(:transaction_class, new: transaction) }
   let(:transaction) { double(:transaction) }
-  let(:statement) { double(:statement, print: transaction) }
+  let(:statement) { double(:statement) }
 
   describe '#initialize' do
     it 'initializes with an empty transaction array' do
@@ -32,7 +32,8 @@ describe Account do
 
   describe '#summary' do
     it 'prints a summary of the transactions' do
-      expect{ subject.summary }.to output(transaction).to_stdout
+      allow(statement).to receive(:print).and_return(:line_item)
+      expect { subject.summary }.to output("line_item\n").to_stdout
     end
   end
 
