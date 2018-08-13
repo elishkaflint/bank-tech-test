@@ -8,13 +8,19 @@ describe Transaction do
 
   describe '#debit' do
     it 'returns the debit amount' do
-      expect(debit_transaction.debit).to eq 5.00
+      expect(debit_transaction.debit).to eq "5.00"
+    end
+    it 'returns nothing for the credit amount' do
+      expect(debit_transaction.credit).to eq ""
     end
   end
 
   describe '#credit' do
     it 'returns the credit amount' do
-      expect(credit_transaction.credit).to eq 10.00
+      expect(credit_transaction.credit).to eq "10.00"
+    end
+    it 'returns nothing for the debit amount' do
+      expect(credit_transaction.debit).to eq ""
     end
   end
 
@@ -26,7 +32,7 @@ describe Transaction do
 
   describe '#current_balance' do
     it 'returns the balance after the transaction has completed' do
-      expect(debit_transaction.current_balance).to eq 20
+      expect(debit_transaction.current_balance).to eq "20.00"
     end
   end
 
