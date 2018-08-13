@@ -10,6 +10,9 @@ describe Account do
     it 'initializes with an empty transaction array' do
       expect(subject.transactions).to eq []
     end
+    it 'initializes with a default balance of zero' do
+      expect(subject.balance).to eq Account::DEFAULT_BALANCE
+    end
   end
 
   describe '#deposit' do

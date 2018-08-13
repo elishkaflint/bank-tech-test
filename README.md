@@ -16,9 +16,6 @@ ___
 ## User Stories
 
 ```
-As a user,
-So that I know how much money I have,
-I want to be able to see my current balance.
 
 As a user,
 So that I can move money into my account,
@@ -27,6 +24,10 @@ I want to be able to make a deposit.
 As a user,
 So that I can spend the money in my account,
 I want to be able to make a withdrawal.
+
+As a user,
+So that I know how much money I have,
+I want to be able to see my current balance.
 
 As a user,
 So that I can understand my transaction history,
