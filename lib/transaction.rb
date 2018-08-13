@@ -5,10 +5,16 @@ class Transaction
   attr_reader :debit, :credit, :date, :current_balance
 
   def initialize(debit, credit, balance, date = Time.new.strftime("%d/%m/%Y"))
-    @debit = debit
-    @credit = credit
+    @debit = format(debit)
+    @credit = format(credit)
     @date = date
-    @current_balance = balance
+    @current_balance = format(balance)
+  end
+
+  private
+
+  def format(number)
+    number === 0 ? "" : '%.2f' % number
   end
 
 end
