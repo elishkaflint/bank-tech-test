@@ -2,9 +2,10 @@ require 'account'
 
 describe Account do
 
-  let(:subject) { Account.new }
+  let(:subject) { Account.new(statement) }
   let(:transaction_class) { double(:transaction_class, new: transaction) }
   let(:transaction) { double(:transaction) }
+  let(:statement) { double(:statement, print: transaction) }
 
   describe '#initialize' do
     it 'initializes with an empty transaction array' do
@@ -26,6 +27,12 @@ describe Account do
     it 'adds a debit transaction to the transaction array' do
       subject.withdraw(5, transaction_class)
       expect(subject.transactions).to include transaction
+    end
+  end
+
+  describe '#summary' do
+    it 'prints a summary of the transactions' do
+      expect{ subject.summary }.to output(transaction).to_stdout
     end
   end
 
