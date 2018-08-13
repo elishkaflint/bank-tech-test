@@ -15,7 +15,7 @@ describe Statement do
     it 'adds a new credit transaction to the statement' do
       @account.deposit(10, date)
       msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
-      expect(account.summary).to eq msg
+      expect{ account.summary }.to output(msg).to_stdout
     end
   end
 
@@ -27,7 +27,7 @@ describe Statement do
     it 'adds a new debit transation to the statement' do
       @account.withdraw(10, date)
       msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
-      expect(account.summary).to eq msg
+      expect{ account.summary }.to output(msg).to_stdout
     end
   end
 
@@ -40,7 +40,7 @@ describe Statement do
       @account.deposit(10, date)
       @account.withdraw(5, date)
       msg = "date || credit || debit || balance\n#{date} || 5.00 || || 5.00\n#{date}  || || 10.00 || 10.00"
-      expect(account.summary).to eq msg
+      expect{ account.summary }.to output(msg).to_stdout
     end
   end
 
