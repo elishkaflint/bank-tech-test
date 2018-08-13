@@ -7,7 +7,7 @@ describe Statement do
   # I want to be able to make a deposit.
 
   describe '#deposit' do
-    it 'should add a new transation to the statement' do
+    it 'adds a new transation to the statement' do
       statement = Statement.new
       account = Account.new
       date = Time.now.strftime("%d/%m/%Y")
