@@ -11,13 +11,19 @@ class Account
   end
 
   def deposit(amount, transaction = Transaction)
-    @transaction = transaction.new(0, amount)
-    @transactions << @transaction
+    credit = transaction.new(0, amount)
+    store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
-    @transaction = transaction.new(amount, 0)
-    @transactions << @transaction
+    debit = transaction.new(amount, 0)
+    store(debit)
+  end
+
+  private
+
+  def store(transaction)
+    @transactions << transaction
   end
 
 end

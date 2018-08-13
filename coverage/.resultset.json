@@ -55,6 +55,12 @@
         1,
         null,
         null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/elishkaflint/Projects/bank-tech-test/lib/transaction.rb": [
@@ -130,6 +136,6 @@
         null
       ]
     },
-    "timestamp": 1534163092
+    "timestamp": 1534163382
   }
 }
