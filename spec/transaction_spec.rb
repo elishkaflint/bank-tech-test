@@ -3,8 +3,8 @@ require 'transaction'
 describe Transaction do
 
   let(:date) { Time.now.strftime("%d/%m/%Y") }
-  let(:debit_transaction) { Transaction.new(5, 0, date) }
-  let(:credit_transaction) { Transaction.new(0, 10, date) }
+  let(:debit_transaction) { Transaction.new(5, 0, date, 20) }
+  let(:credit_transaction) { Transaction.new(0, 10, date, 20) }
 
   describe '#debit' do
     it 'returns the debit amount' do
@@ -25,9 +25,8 @@ describe Transaction do
   end
 
   describe '#current_balance' do
-    it 'can be set with a given amount' do
-      debit_transaction.current_balance = -5
-      expect(debit_transaction.current_balance).to eq -5
+    it 'returns the balance after the transaction has completed' do
+      expect(debit_transaction.current_balance).to eq 20
     end
   end
 
