@@ -13,8 +13,10 @@ describe "Banking application features" do
 
   describe '#deposit' do
     it 'adds a new credit transaction to the statement' do
-      @account.deposit(10, date)
-      msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
+      account = Account.new
+      date = Time.now.strftime("%d/%m/%Y")
+      account.deposit(10)
+      msg = "date || credit || debit || balance\n#{date} || 10.00 ||  || 10.00\n"
       expect{ account.summary }.to output(msg).to_stdout
     end
   end
@@ -25,8 +27,10 @@ describe "Banking application features" do
 
   describe '#withdrawal' do
     it 'adds a new debit transation to the statement' do
-      @account.withdraw(10, date)
-      msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
+      account = Account.new
+      date = Time.now.strftime("%d/%m/%Y")
+      account.withdraw(10)
+      msg = "date || credit || debit || balance\n#{date} ||  || 10.00 || -10.00\n"
       expect{ account.summary }.to output(msg).to_stdout
     end
   end
@@ -37,10 +41,12 @@ describe "Banking application features" do
 
   describe '#summary' do
     it 'shows multiple transactions in reverse order' do
-      @account.deposit(10, date)
-      @account.withdraw(5, date)
-      msg = "date || credit || debit || balance\n#{date} || 5.00 || || 5.00\n#{date}  || || 10.00 || 10.00"
-      expect{ account.summary }.to output(msg).to_stdout
+      account = Account.new
+      date = Time.now.strftime("%d/%m/%Y")
+      account.deposit(10)
+      account.withdraw(5)
+      msg = "date || credit || debit || balance\n#{date} ||  || 5.00 || 5.00\n#{date} || 10.00 ||  || 10.00\n"
+      expect { account.summary }.to output(msg).to_stdout
     end
   end
 

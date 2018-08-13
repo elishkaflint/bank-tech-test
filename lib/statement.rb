@@ -2,11 +2,8 @@
 
 class Statement
 
-  def initialize(transactions)
+  def summary(transactions)
     @transactions = transactions
-  end
-
-  def summary
     print_header + print_transactions
   end
 

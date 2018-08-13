@@ -32,7 +32,7 @@ describe Account do
 
   describe '#summary' do
     it 'prints a summary of the transactions' do
-      allow(statement).to receive(:print).and_return(:line_item)
+      allow(statement).to receive(:summary).and_return(:line_item)
       expect { subject.summary }.to output("line_item\n").to_stdout
     end
   end
