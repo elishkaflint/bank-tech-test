@@ -10,7 +10,7 @@ describe Statement do
   describe '#print' do
     it 'prints an array in the required format' do
       msg = "date || credit || debit || balance\n14/08/2018 || 0.00 || 5.00 || 5.00\n13/08/2018 || 10.00 || 0.00 || 10.00\n"
-      expect{ subject.print }.to output(msg).to_stdout
+      expect(subject.summary).to eq msg
     end
   end
 

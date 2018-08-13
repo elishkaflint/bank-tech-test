@@ -6,9 +6,8 @@ class Statement
     @transactions = transactions
   end
 
-  def print
-    puts print_header
-    puts print_transactions
+  def summary
+    print_header + print_transactions
   end
 
   private
