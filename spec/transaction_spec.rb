@@ -24,4 +24,11 @@ describe Transaction do
     end
   end
 
+  describe '#current_balance' do
+    it 'can be set with a given amount' do
+      debit_transaction.current_balance = -5
+      expect(debit_transaction.current_balance).to eq -5
+    end
+  end
+
 end
