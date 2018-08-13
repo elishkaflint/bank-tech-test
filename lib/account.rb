@@ -1,6 +1,6 @@
 # Account logs individual transactions
 
-require 'transaction'
+require_relative './transaction'
 
 class Account
 
@@ -14,13 +14,15 @@ class Account
 
   def deposit(amount, transaction = Transaction)
     @balance += amount
-    credit = transaction.new(0, amount)
+    # reducing number of args does not make tests fail
+    credit = transaction.new(0, amount, @balance)
     store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
     @balance -= amount
-    debit = transaction.new(amount, 0)
+    # reducing number of args does not make tests fail
+    debit = transaction.new(amount, 0, @balance)
     store(debit)
   end
 

@@ -3,8 +3,8 @@ require 'transaction'
 describe Transaction do
 
   let(:date) { Time.now.strftime("%d/%m/%Y") }
-  let(:debit_transaction) { Transaction.new(5, 0, date, 20) }
-  let(:credit_transaction) { Transaction.new(0, 10, date, 20) }
+  let(:debit_transaction) { Transaction.new(5, 0, 20, date) }
+  let(:credit_transaction) { Transaction.new(0, 10, 20, date) }
 
   describe '#debit' do
     it 'returns the debit amount' do
