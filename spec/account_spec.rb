@@ -12,8 +12,8 @@ describe Account do
 
   describe '#deposit' do
     it 'adds a credit transaction to the transaction array' do
-      transaction = subject.deposit(10)
-      expect(subject.transactions).to include transaction
+      subject.deposit(10)
+      expect(subject.transactions.first.credit).to eq 10
     end
   end
 
