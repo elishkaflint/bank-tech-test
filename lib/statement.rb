@@ -7,7 +7,8 @@ class Statement
   end
 
   def print
-    print_header + print_transactions
+    print_header
+    print_transactions
   end
 
   private
