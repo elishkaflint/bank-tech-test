@@ -1,11 +1,2 @@
-Transaction:
-- contains transaction information (date, credit amount, debit amount)
-
-Account:
-- stores transactions
-
-Calculator:
-- calculates current balance
-
-Summary:
-- prints transactions
+notes.md
+practice-transaction.rb
