@@ -4,15 +4,16 @@
       "/Users/elishkaflint/Projects/bank-tech-test/spec/feature_spec.rb": [
         1,
         null,
-        0,
+        1,
         null,
         null,
         null,
         null,
         null,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         0,
         0,
         0,
@@ -21,8 +22,14 @@
         null,
         null,
         null
+      ],
+      "/Users/elishkaflint/Projects/bank-tech-test/lib/statement.rb": [
+        null,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1534156089
+    "timestamp": 1534156386
   }
 }
