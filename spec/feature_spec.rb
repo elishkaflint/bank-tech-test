@@ -1,6 +1,6 @@
-require 'statement'
+require 'account'
 
-describe Statement do
+describe "Banking application features" do
 
   before(:each) do
     @account = Account.new
