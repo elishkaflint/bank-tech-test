@@ -15,4 +15,9 @@ class Account
     @transactions << @transaction
   end
 
+  def withdraw(amount, transaction = Transaction)
+    @transaction = transaction.new(amount, 0)
+    @transactions << @transaction
+  end
+
 end
