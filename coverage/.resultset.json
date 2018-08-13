@@ -1,7 +1,28 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/elishkaflint/Projects/bank-tech-test/spec/feature_spec.rb": [
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
     },
-    "timestamp": 1534154883
+    "timestamp": 1534156089
   }
 }
