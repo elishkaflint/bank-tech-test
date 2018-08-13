@@ -3,7 +3,7 @@ require 'statement'
 describe Statement do
 
   before(:each) do
-    account = Account.new
+    @account = Account.new
     date = Time.now.strftime("%d/%m/%Y")
   end
 
@@ -13,7 +13,7 @@ describe Statement do
 
   describe '#deposit' do
     it 'adds a new credit transaction to the statement' do
-      account.deposit(10, date)
+      @account.deposit(10, date)
       msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
       expect(account.summary).to eq msg
     end
@@ -25,9 +25,22 @@ describe Statement do
 
   describe '#withdrawal' do
     it 'adds a new debit transation to the statement' do
-      account.withdraw(10, date)
+      @account.withdraw(10, date)
       msg = "date || credit || debit || balance\n#{date} || || 10.00 || 10.00"
-      expect(statement.summary).to eq msg
+      expect(account.summary).to eq msg
+    end
+  end
+
+  # As a user,
+  # So that I can understand my transaction history,
+  # I want to be able to see my transaction history in reverse chronological order.
+
+  describe '#summary' do
+    it 'shows multiple transactions in reverse order' do
+      @account.deposit(10, date)
+      @account.withdraw(5, date)
+      msg = "date || credit || debit || balance\n#{date} || 5.00 || || 5.00\n#{date}  || || 10.00 || 10.00"
+      expect(account.summary).to eq msg
     end
   end
 
