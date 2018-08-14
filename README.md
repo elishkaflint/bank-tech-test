@@ -61,7 +61,7 @@ ____
 #### Approach:
 
 * Broke the task down into clear user stories
-* Used TDD (red, green, refactor) to work through each stories (as evidenced by my [commits](https://github.com/elishkaflint/bank-tech-test/commits/master))
+* Used TDD (red, green, refactor) to work through each story (as evidenced by my [commits](https://github.com/elishkaflint/bank-tech-test/commits/master))
 * Started with feature tests and broke these down into more focused unit tests
 * Planned classes carefully to ensure I adhered to the Single Responsibility Principle
 * Ensured tests were isolated from other classes to remove any external dependencies from individual spec files
