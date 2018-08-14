@@ -1,3 +1,5 @@
+# Balance tracks the current balance
+
 class Balance
 
   DEFAULT_BALANCE = 0
