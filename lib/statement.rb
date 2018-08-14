@@ -15,10 +15,14 @@ class Statement
 
   def print_transactions
     output = @transactions.reverse.map do |transaction|
-      "#{transaction.date} || #{transaction.credit} || "\
-      "#{transaction.debit} || #{transaction.current_balance}\n"
+      "#{transaction.date} || #{format(transaction.credit)} || "\
+      "#{format(transaction.debit)} || #{format(transaction.current_balance)}\n"
     end
     output.join("")
+  end
+
+  def format(number)
+    number === 0 ? "" : '%.2f' % number
   end
 
 end
