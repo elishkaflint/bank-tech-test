@@ -66,9 +66,10 @@ ____
 * Planned classes carefully to ensure I adhered to the Single Responsibility Principle
 * Ensured tests were isolated from other classes to remove any external dependencies from individual spec files
 
-#### What I would do next:
+#### Improvement areas:
 
-* Implement guard clauses to prevent bad user inputs (eg. depositing a negative amount)
+* Withdraw and deposit methods are long when guard clauses are included
+* Withdraw and deposit unit tests may not be fully isolated from each other
 
 ___
 
