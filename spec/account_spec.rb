@@ -27,6 +27,10 @@ describe Account do
       account.deposit(10, transaction_class)
       expect(account.transactions).to include transaction
     end
+    it 'raises an error if the amount is a negative number' do
+      message = "You cannot deposit a negative amount"
+      expect { account.deposit(10, transaction_class) }.to raise_error(message)
+    end
   end
 
   describe '#withdraw' do
@@ -41,6 +45,10 @@ describe Account do
     it 'adds a debit transaction to the transaction array' do
       account.withdraw(5, transaction_class)
       expect(account.transactions).to include transaction
+    end
+    it 'raises an error if the amount is a negative number' do
+      message = "You cannot withdraw a negative amount"
+      expect { account.withdraw(5, transaction_class) }.to raise_error(message)
     end
   end
 
