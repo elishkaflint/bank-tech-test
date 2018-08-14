@@ -7,12 +7,6 @@ describe Account do
   let(:transaction) { double(:transaction) }
   let(:statement) { double(:statement) }
 
-  describe '#initialize' do
-    it 'initializes with an empty transaction array' do
-      expect(account.transactions).to eq []
-    end
-  end
-
   describe '#deposit' do
     it 'increases the balance' do
       account.deposit(10)

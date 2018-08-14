@@ -11,10 +11,4 @@ class Transaction
     @current_balance = balance
   end
 
-  private
-
-  def format(number)
-    number === 0 ? "" : '%.2f' % number
-  end
-
 end
