@@ -4,7 +4,7 @@ class Statement
 
   def summary(transactions)
     @transactions = transactions
-    print_header + print_transactions
+    puts (print_header + print_transactions)
   end
 
   private

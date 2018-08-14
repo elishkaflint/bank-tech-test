@@ -3,7 +3,7 @@ require 'account'
 describe "Banking application features" do
 
   before(:each) do
-    @account = Account.new
+    account = Account.new
     date = Time.now.strftime("%d/%m/%Y")
   end
 
@@ -17,7 +17,7 @@ describe "Banking application features" do
       date = Time.now.strftime("%d/%m/%Y")
       account.deposit(10)
       msg = "date || credit || debit || balance\n#{date} || 10.00 ||  || 10.00\n"
-      expect{ account.summary }.to output(msg).to_stdout
+      expect { account.summary }.to output(msg).to_stdout
     end
   end
 
@@ -31,7 +31,7 @@ describe "Banking application features" do
       date = Time.now.strftime("%d/%m/%Y")
       account.withdraw(10)
       msg = "date || credit || debit || balance\n#{date} ||  || 10.00 || -10.00\n"
-      expect{ account.summary }.to output(msg).to_stdout
+      expect { account.summary }.to output(msg).to_stdout
     end
   end
 

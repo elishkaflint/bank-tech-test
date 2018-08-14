@@ -10,7 +10,7 @@ describe Statement do
   describe '#summary' do
     it 'prints an array in the required format' do
       msg = "date || credit || debit || balance\n14/08/2018 || 0.00 || 5.00 || 5.00\n13/08/2018 || 10.00 || 0.00 || 10.00\n"
-      expect(subject.summary(transactions)).to eq msg
+      expect { subject.summary(transactions) }.to output(msg).to_stdout
     end
   end
 
