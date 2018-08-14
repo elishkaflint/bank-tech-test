@@ -1,11 +1,15 @@
-require 'Statement'
+require 'statement'
 
 describe Statement do
 
   let(:subject) { Statement.new }
   let(:transactions) { [transaction1, transaction2] }
-  let(:transaction1) { double(:transaction1, debit: "0.00", credit: "10.00", date: "13/08/2018", current_balance: "10.00") }
-  let(:transaction2) { double(:transaction2, debit: "5.00", credit: "0.00", date: "14/08/2018", current_balance: "5.00") }
+  let(:transaction1) { double(:transaction1, debit: "0.00", credit: "10.00",\
+                       date: "13/08/2018", current_balance: "10.00")
+  }
+  let(:transaction2) { double(:transaction2, debit: "5.00", credit: "0.00",\
+                       date: "14/08/2018", current_balance: "5.00")
+  }
 
   describe '#print' do
     it 'prints an array in the required format' do
