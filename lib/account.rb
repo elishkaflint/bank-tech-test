@@ -2,7 +2,6 @@
 
 require_relative './transaction'
 require_relative './statement'
-require_relative './balance'
 
 class Account
 
@@ -16,14 +15,14 @@ class Account
 
   def deposit(amount, transaction = Transaction)
     raise "You cannot deposit a negative amount" unless amount.positive?
-    @balance += amount
+    increase_balance(amount)
     credit = transaction.new(0, amount, @balance)
     store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
     raise "You cannot withdraw a negative amount" unless amount.positive?
-    @balance -= amount
+    decrease_balance(amount)
     debit = transaction.new(amount, 0, @balance)
     store(debit)
   end
@@ -36,6 +35,14 @@ class Account
 
   def store(transaction)
     @transactions << transaction
+  end
+
+  def increase_balance(amount)
+    @balance += amount
+  end
+
+  def decrease_balance(amount)
+    @balance -= amount
   end
 
 end
