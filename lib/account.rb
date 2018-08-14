@@ -7,23 +7,24 @@ class Account
 
   attr_reader :transactions, :balance
 
-  def initialize(statement = Statement.new)
+  def initialize(statement = Statement.new, transaction = Transaction)
     @transactions = []
     @balance = 0
     @statement = statement
+    @transaction = transaction
   end
 
-  def deposit(amount, transaction = Transaction)
+  def deposit(amount)
     raise "You cannot deposit a negative amount" unless amount.positive?
     increase_balance(amount)
-    credit = transaction.new(0, amount, @balance)
+    credit = @transaction.new(0, amount, @balance)
     store(credit)
   end
 
-  def withdraw(amount, transaction = Transaction)
+  def withdraw(amount)
     raise "You cannot withdraw a negative amount" unless amount.positive?
     decrease_balance(amount)
-    debit = transaction.new(amount, 0, @balance)
+    debit = @transaction.new(amount, 0, @balance)
     store(debit)
   end
 
