@@ -6,26 +6,25 @@ require_relative './balance'
 
 class Account
 
-  attr_reader :transactions, :balance
-  DEFAULT_BALANCE = 0
+  attr_reader :transactions
 
-  def initialize(statement = Statement.new)
+  def initialize(statement = Statement.new, balance = Balance.new)
     @transactions = []
-    @balance = DEFAULT_BALANCE
+    @balance = balance
     @statement = statement
   end
 
   def deposit(amount, transaction = Transaction)
-    @balance += amount
+    @balance.increase(amount)
     # reducing number of args does not make tests fail
-    credit = transaction.new(0, amount, @balance)
+    credit = transaction.new(0, amount, @balance.balance)
     store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
-    @balance -= amount
+    @balance.decrease(amount)
     # reducing number of args does not make tests fail
-    debit = transaction.new(amount, 0, @balance)
+    debit = transaction.new(amount, 0, @balance.balance)
     store(debit)
   end
 
