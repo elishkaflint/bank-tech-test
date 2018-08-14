@@ -20,7 +20,7 @@ ___
 
 Ruby, RSpec, Rubocop, Simple Coverage
 
-**Programme fully tested; all classes isolated and 100% test coverage**
+**Programme fully tested; all classes isolated with 100% test coverage and no linter offenses**
 
 ### Using the Application
 
