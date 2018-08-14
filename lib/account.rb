@@ -6,25 +6,25 @@ require_relative './balance'
 
 class Account
 
-  attr_reader :transactions
+  attr_reader :transactions, :balance
 
-  def initialize(statement = Statement.new, balance = Balance.new)
+  def initialize(statement = Statement.new)
     @transactions = []
-    @balance = balance
+    @balance = 0
     @statement = statement
   end
 
   def deposit(amount, transaction = Transaction)
     raise "You cannot deposit a negative amount" unless amount.positive?
-    @balance.increase(amount)
-    credit = transaction.new(0, amount, @balance.current)
+    @balance += amount
+    credit = transaction.new(0, amount, @balance)
     store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
     raise "You cannot withdraw a negative amount" unless amount.positive?
-    @balance.decrease(amount)
-    debit = transaction.new(amount, 0, @balance.current)
+    @balance -= amount
+    debit = transaction.new(amount, 0, @balance)
     store(debit)
   end
 
