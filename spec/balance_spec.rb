@@ -2,7 +2,7 @@ require 'balance'
 
 describe Balance do
 
-  let(subject) { Balance.new }
+  let(:subject) { Balance.new }
 
   describe '#initialize' do
     it 'starts with a default balance' do
