@@ -28,7 +28,7 @@ Ruby, RSpec, Rubocop, Simple Coverage
 
 ```
 $ git clone https://github.com/elishkaflint/bank-tech-test.git
-$ cd bank-test-test
+$ cd bank-tech-test
 $ bundle
 $ irb
 > require './lib/account.rb'
