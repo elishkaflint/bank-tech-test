@@ -15,15 +15,23 @@ class Account
   end
 
   def deposit(amount, transaction = Transaction)
-    @balance.increase(amount)
-    credit = transaction.new(0, amount, @balance.current)
-    store(credit)
+    if amount.positive?
+      @balance.increase(amount)
+      credit = transaction.new(0, amount, @balance.current)
+      store(credit)
+    else
+      raise "You cannot deposit a negative amount"
+    end
   end
 
   def withdraw(amount, transaction = Transaction)
-    @balance.decrease(amount)
-    debit = transaction.new(amount, 0, @balance.current)
-    store(debit)
+    if amount.positive?
+      @balance.decrease(amount)
+      debit = transaction.new(amount, 0, @balance.current)
+      store(debit)
+    else
+      raise "You cannot withdraw a negative amount"
+    end
   end
 
   def summary
