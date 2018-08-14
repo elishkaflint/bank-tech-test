@@ -2,7 +2,7 @@ require 'statement'
 
 describe Statement do
 
-  let(:subject) { Statement.new }
+  let(:statement) { Statement.new }
   let(:transactions) { [transaction1, transaction2] }
   let(:transaction1) { double(:transaction1, debit: "0.00", credit: "10.00",\
                        date: "13/08/2018", current_balance: "10.00")
@@ -16,7 +16,7 @@ describe Statement do
       msg = "date || credit || debit || balance\n"\
             "14/08/2018 || 0.00 || 5.00 || 5.00\n"\
             "13/08/2018 || 10.00 || 0.00 || 10.00\n"
-      expect { subject.print(transactions) }.to output(msg).to_stdout
+      expect { statement.print(transactions) }.to output(msg).to_stdout
     end
   end
 
