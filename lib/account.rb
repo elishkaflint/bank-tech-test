@@ -16,13 +16,13 @@ class Account
 
   def deposit(amount, transaction = Transaction)
     @balance.increase(amount)
-    credit = transaction.new(0, amount, @balance.balance)
+    credit = transaction.new(0, amount, @balance.current)
     store(credit)
   end
 
   def withdraw(amount, transaction = Transaction)
     @balance.decrease(amount)
-    debit = transaction.new(amount, 0, @balance.balance)
+    debit = transaction.new(amount, 0, @balance.current)
     store(debit)
   end
 

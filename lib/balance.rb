@@ -1,18 +1,18 @@
 class Balance
 
   DEFAULT_BALANCE = 0
-  attr_reader :balance
+  attr_reader :current
 
   def initialize
-    @balance = DEFAULT_BALANCE
+    @current = DEFAULT_BALANCE
   end
 
   def increase(amount)
-    @balance += amount
+    @current += amount
   end
 
   def decrease(amount)
-    @balance -= amount
+    @current -= amount
   end
 
 end

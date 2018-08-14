@@ -6,7 +6,7 @@ describe Account do
   let(:transaction_class) { double(:transaction_class, new: transaction) }
   let(:transaction) { double(:transaction) }
   let(:statement) { double(:statement) }
-  let(:balance) { double(:balance, increase: 5, decrease: 5, balance: 5) }
+  let(:balance) { double(:balance, increase: 5, decrease: 5, current: 5) }
 
   describe '#initialize' do
     it 'initializes with an empty transaction array' do
