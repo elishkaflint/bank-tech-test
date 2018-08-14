@@ -2,7 +2,7 @@
 
 class Statement
 
-  def summary(transactions)
+  def print(transactions)
     @transactions = transactions
     puts(print_header + print_transactions)
   end
@@ -15,7 +15,8 @@ class Statement
 
   def print_transactions
     output = @transactions.reverse.map do |transaction|
-      "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.current_balance}\n"
+      "#{transaction.date} || #{transaction.credit} || "\
+      "#{transaction.debit} || #{transaction.current_balance}\n"
     end
     output.join("")
   end
