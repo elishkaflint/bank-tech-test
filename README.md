@@ -5,12 +5,71 @@ ___
 ## Summary
 
 Week 9 Makers Academy tech test to build a banking application.</br>
-[Full instructions and user stories here.](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
+[Full instructions here.](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
 ___
 
 ## Credits
 
 Developed solo by Elishka Flint.
+
+___
+
+## Technical
+
+### Tech/Frameworks Used
+
+Ruby, RSpec, Rubocop, Simple Coverage
+
+**Programme fully tested; all classes isolated and 100% test coverage**
+
+### Using the Application
+
+#### Clone the repo and launch:
+
+```
+$ git clone https://github.com/elishkaflint/bank-tech-test.git
+$ cd bank-test-test
+$ bundle
+$ irb
+> require './lib/account.rb'
+```
+
+#### Example usage:
+
+```
+# create a new account
+> account = Account.new
+
+# deposit money in the account
+> account.deposit(10)
+
+# withdraw money from the account
+> account.withdraw(5)
+
+# print a summary
+> account.summary
+
+date || credit || debit || balance
+14/08/2018 ||  || 5.00 || 5.00
+14/08/2018 || 10.00 ||  || 10.00
+```
+
+____
+
+## Process
+
+#### Approach:
+
+* Broke the task down into clear user stories
+* Used TDD (red, green, refactor) to work through each stories (as evidenced by my [commits](https://github.com/elishkaflint/bank-tech-test/commits/master))
+* Started with feature tests and broke these down into more focused unit tests
+* Planned classes carefully to ensure I adhered to the Single Responsibility Principle
+* Ensured tests were isolated from other classes to remove any external dependencies from individual spec files
+
+#### What I would do next:
+
+* Implement guard clauses to prevent bad user inputs (eg. depositing a negative amount)
+
 ___
 
 ## User Stories
@@ -37,29 +96,3 @@ As a user,
 So that I can understand my transaction history,
 I want to be able to see my transaction history in reverse chronological order.
 ```
-
-___
-
-## State of Completion
-
-### Implemented Functionality
-
-* xxx
-
-### What I would do next
-
-* xxx
-
-___
-
-## Technical
-
-### Tech/Frameworks Used
-
-Ruby, RSpec, Rubocop, Simple Coverage
-
-### Launching the Application
-
-```
-```
-____
