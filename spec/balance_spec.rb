@@ -20,7 +20,7 @@ describe Balance do
   describe '#decrease' do
     it 'decreases the balance' do
       balance.decrease(5)
-      expect(balance.current).to eq -5
+      expect(balance.current).to eq(-5)
     end
   end
 
